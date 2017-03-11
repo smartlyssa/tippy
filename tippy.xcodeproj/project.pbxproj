@@ -14,6 +14,7 @@
 		49C2632B1E723642004F1EEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C263291E723642004F1EEE /* LaunchScreen.storyboard */; };
 		49C263361E723642004F1EEE /* tippyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C263351E723642004F1EEE /* tippyTests.swift */; };
 		49C263411E723642004F1EEE /* tippyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C263401E723642004F1EEE /* tippyUITests.swift */; };
+		49C2634F1E7275CC004F1EEE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C2634E1E7275CC004F1EEE /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		49C2633C1E723642004F1EEE /* tippyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tippyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C263401E723642004F1EEE /* tippyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tippyUITests.swift; sourceTree = "<group>"; };
 		49C263421E723642004F1EEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49C2634E1E7275CC004F1EEE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				49C263201E723642004F1EEE /* AppDelegate.swift */,
 				49C263221E723642004F1EEE /* ViewController.swift */,
 				49C263241E723642004F1EEE /* Main.storyboard */,
+				49C2634E1E7275CC004F1EEE /* SettingsViewController.swift */,
 				49C263271E723642004F1EEE /* Assets.xcassets */,
 				49C263291E723642004F1EEE /* LaunchScreen.storyboard */,
 				49C2632C1E723642004F1EEE /* Info.plist */,
@@ -264,6 +267,7 @@
 			files = (
 				49C263231E723642004F1EEE /* ViewController.swift in Sources */,
 				49C263211E723642004F1EEE /* AppDelegate.swift in Sources */,
+				49C2634F1E7275CC004F1EEE /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +516,7 @@
 				49C263471E723642004F1EEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49C263481E723642004F1EEE /* Build configuration list for PBXNativeTarget "tippyTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +525,7 @@
 				49C2634A1E723642004F1EEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49C2634B1E723642004F1EEE /* Build configuration list for PBXNativeTarget "tippyUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +534,7 @@
 				49C2634D1E723642004F1EEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

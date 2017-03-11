@@ -45,5 +45,19 @@ class ViewController: UIViewController {
     
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let defaults = UserDefaults.standard
+        let intValue = defaults.integer(forKey: "defaultTipValue")
+        
+        print("load value from NSUserDefaults: \(intValue)")
+        
+        if (defaults.object(forKey: "defaultTipValue") != nil) {
+            tipControl.selectedSegmentIndex = intValue
+        }
+        
+//        let intValue = defaults.integerForKey("another_key_that_you_choose")
+    }
+    
 }
 
