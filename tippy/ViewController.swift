@@ -23,8 +23,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        billField.becomeFirstResponder()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,16 +51,21 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        billField.becomeFirstResponder()
     }
     
     @IBAction func onBillEdit(_ sender: Any) {
         billField.text = ""
+        tipLabel.text = String(format: "%.2f",0)
+        totalLabel.text = String(format: "%.2f",0)
+        
         
         let defaults = UserDefaults.standard
         if (defaults.object(forKey: "defaultTipValue") != nil) {
             let intValue = defaults.integer(forKey: "defaultTipValue")
             tipControl.selectedSegmentIndex = intValue
         }
+        
     }
     
 }
