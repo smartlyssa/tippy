@@ -14,8 +14,16 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        let defaults = UserDefaults.standard
+        if (defaults.object(forKey: "defaultTipValue") != nil) {
+            let intValue = defaults.integer(forKey: "defaultTipValue")
+            defaultTipSegControl.selectedSegmentIndex = intValue
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,8 +45,8 @@ class SettingsViewController: UIViewController {
         
         let defaults = UserDefaults.standard
         defaults.set(defaultTipSegControl.selectedSegmentIndex, forKey: "defaultTipValue")
-//        defaults.setInteger(123, forKey: "another_key_that_you_choose")
         defaults.synchronize()
+        print("defaultTipValue updated: \(defaultTipSegControl.selectedSegmentIndex)")
         
     }
 

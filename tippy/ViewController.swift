@@ -15,9 +15,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipControl: UISegmentedControl!
     
+    @IBOutlet weak var billCurrencySymbol: UILabel!
+    @IBOutlet weak var tipCurrencySymbol: UILabel!
+    @IBOutlet weak var totalCurrencySymbol: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let defaults = UserDefaults.standard
+        
+        if (defaults.object(forKey: "defaultTipValue") != nil) {
+            let intValue = defaults.integer(forKey: "defaultTipValue")
+            tipControl.selectedSegmentIndex = intValue
+            print("defaultTipValue: \(intValue)")
+        } else {
+            print("default tip not set")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +39,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onTap(_ sender: Any) {
-        view.endEditing(true)        
+        
+        billField.text = String(format: "%.2f",Double(billField.text!) ?? 0)
+        view.endEditing(true)
     }
     
     @IBAction func calculateTip(_ sender: AnyObject) {
@@ -36,28 +51,21 @@ class ViewController: UIViewController {
         let bill = Double(billField.text!) ?? 0
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
-        
-//        tipLabel.text = "$ \(tip)"
-//        totalLabel.text = "$ \(total)"
-        
-        tipLabel.text = String(format: "$ %.2f",tip)
-        totalLabel.text = String(format: "$ %.2f",total)
+
+        tipLabel.text = String(format: "%.2f",tip)
+        totalLabel.text = String(format: "%.2f",total)
     
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let defaults = UserDefaults.standard
-        let intValue = defaults.integer(forKey: "defaultTipValue")
-        
-        print("load value from NSUserDefaults: \(intValue)")
-        
-        if (defaults.object(forKey: "defaultTipValue") != nil) {
-            tipControl.selectedSegmentIndex = intValue
-        }
-        
-//        let intValue = defaults.integerForKey("another_key_that_you_choose")
+
     }
+    
+    @IBAction func onBillEdit(_ sender: Any) {
+        billField.text = ""
+    }
+    
     
 }
 
