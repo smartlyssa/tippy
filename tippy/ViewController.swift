@@ -27,10 +27,8 @@ class ViewController: UIViewController {
         if (defaults.object(forKey: "defaultTipValue") != nil) {
             let intValue = defaults.integer(forKey: "defaultTipValue")
             tipControl.selectedSegmentIndex = intValue
-            print("defaultTipValue: \(intValue)")
-        } else {
-            print("default tip not set")
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,7 +63,6 @@ class ViewController: UIViewController {
     @IBAction func onBillEdit(_ sender: Any) {
         billField.text = ""
     }
-    
     
 }
 
