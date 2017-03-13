@@ -59,7 +59,6 @@ class ViewController: UIViewController {
         tipLabel.text = String(format: "%.2f",0)
         totalLabel.text = String(format: "%.2f",0)
         
-        
         let defaults = UserDefaults.standard
         if (defaults.object(forKey: "defaultTipValue") != nil) {
             let intValue = defaults.integer(forKey: "defaultTipValue")
