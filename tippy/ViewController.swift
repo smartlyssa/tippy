@@ -22,12 +22,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let defaults = UserDefaults.standard
         
-        if (defaults.object(forKey: "defaultTipValue") != nil) {
-            let intValue = defaults.integer(forKey: "defaultTipValue")
-            tipControl.selectedSegmentIndex = intValue
-        }
+        billField.becomeFirstResponder()
         
     }
 
@@ -57,11 +53,16 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
     }
     
     @IBAction func onBillEdit(_ sender: Any) {
         billField.text = ""
+        
+        let defaults = UserDefaults.standard
+        if (defaults.object(forKey: "defaultTipValue") != nil) {
+            let intValue = defaults.integer(forKey: "defaultTipValue")
+            tipControl.selectedSegmentIndex = intValue
+        }
     }
     
 }

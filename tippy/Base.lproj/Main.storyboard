@@ -32,6 +32,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="11k-kw-oR3"/>
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="tdM-LA-xDH"/>
                                     <action selector="onBillEdit:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="jHb-zl-Ear"/>
                                 </connections>
